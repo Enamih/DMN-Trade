@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DMN Trade - Kontakt</title>
+    <link rel='icon' type="image/png" href="image/kamionlogo.png"/>
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+        <nav>
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo"><a href="index.html">DMN Trade</label>
+    <img class="logo1" src="image/cargo-truck.png" alt="">
+    <ul>
+      <li><a class="active" href="index.html">Početna</a></li>
+      <li><a href="masine.html">Građevinske mašine</a></li>
+      <li><a href="alati.html">Građevinski alati</a></li>
+      <li><a href="transport.html">Transport</a></li>  
+      <li><a href="onama.html">O nama</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+
+    </ul>
+  </nav>
+
+        <section id="glavni">
+            <div class="container">
+              <form action="action_page.php" id="form">
+              <header class="dobrodoslica">
+                <h3>Dobrodošli</h3>
+                <p>Ovde nas možete kontaktirati, a mi ćemo se potruditi da Vam odgovorimo u što kraćem vremenskom roku!</p>
+              </header>
+              </form>
+            </div>
+
+
+
+             
+              <div class="container">
+                  <h2 class="text-center">Kontaktirajte nas</h2>
+                  
+                  <div class="container">
+                   
+                      <div class="row">
+                        <div class="col-25">
+                          <label for="name">Ime i prezime</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="text" id="name" name="imeprezime" placeholder="Vaše ime i prezime...">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-25">
+                          <label for="email">E-mail</label>
+                        </div>
+                        <div class="col-75">
+                          <input type="email" id="email" name="email" placeholder="Vaš e-mail...">
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <div class="col-25">
+                          <label for="poruka">Poruka</label>
+                        </div>
+                        <div class="col-75">
+                          <textarea id="poruka" name="poruka" placeholder="Napišite nesto..." style="height:200px"></textarea>
+                        </div>
+                      </div>
+                      
+                      <div class="row">
+                        <input type="button" value="Pošalji" id = "dugme">
+                              </div>
+                              <div id="modal" class="modal-klasa">
+              
+                                <div class="modal-content">
+                                    <span class="close">&times;</span>
+                                    <p>Uspešno ste poslali poruku!</p>
+                                </div>
+                              </div>
+                            </div>
+              
+        </div>
+
+        </section>
+
+                    
+<!-- ******************************************************************************************************************************* -->
+               <footer id="footer">
+                <div class="dmn-adresa">
+                        <p>
+                          <div class="left">
+                          Vuka Karadžića 63<br>
+                          Mali Zvornik, 15318<br>
+                          Srbija <br>
+                        </div>
+                        <div class="centerDiv">
+                          <strong>Telefon:</strong> +381 65 47 22 222<br>
+                          <strong>Email:</strong> dragan.dmntrade@gmail.com<br>
+                        </div>
+                        <div class="right">
+                          <ul>
+                            <li><a href="index.html">Početna</a></li>
+                            <li><a href="onama.html">O nama</a></li>
+                            <li><a href="kontakt.html">Kontakt</a></li>
+                          </ul>
+                        </div>
+                        </p>
+                  </div>
+                <div class="container">
+                  <div class="copyright">
+                    &copy; Copyright <strong>DMN Trade</strong>. All Rights Reserved
+                  </div>
+                </div>
+              </footer>
+
+              <a href="#" class="vrati-na-pocetak"><i class="fa fa-chevron-up"></i></a>
+              
+              
+              <!-- ******************************************************************************************************************************* -->
+              
+              
+              <script >document.getElementById("dugme").addEventListener('click', function validacija(){
+                  var x = document.forms["form"]["name"].value;
+                  if (x == "") {
+                      alert("Niste uneli ime i prezime!");
+                      return;
+                  }
+                  input = document.forms["form"]["email"].value;
+                  atpos = input.indexOf("@");
+                  dotpos = input.lastIndexOf(".");
+                  if (input == "" || atpos < 1 || dotpos - atpos < 2) {
+                      alert("Niste uneli odgovarujući e-mail!");
+                      return;
+                  }
+                  x = document.forms["form"]["poruka"].value;
+                  if (x == "") {
+                      alert("Niste uneli poruku!");
+                      return;
+                  }
+  
+  
+                  var modal = document.getElementById("modal");
+  
+      var dugme = document.getElementById("dugme");
+  
+      var span = document.getElementsByClassName("close")[0];
+  
+      modal.style.display = "block";
+  
+  span.onclick = function () {
+      modal.style.display = "none";
+  }
+  
+  window.onclick = function (event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+              
+              })</script>
+
+
+</body>
+</html>
